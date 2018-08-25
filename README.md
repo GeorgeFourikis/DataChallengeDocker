@@ -18,7 +18,7 @@ By running this command we build the 2 different parts of our app, `app` and `mo
 
 Step2
 ==
-By running this command on a normal behaviour we make sure that we save the data to the DB instance and run both the mongo and app instances
+By running this command on a normal behaviour we make sure that we save the data to the DB instance and run both the `mongo` and `app` instances
 ```console
     > docker-compose up
 ```
