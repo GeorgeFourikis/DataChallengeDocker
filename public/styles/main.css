@@ -1,0 +1,74 @@
+body {
+    background-color: rgba(100, 100, 100, 0.65);
+}
+
+/* Style tables */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #000;
+    text-align: left;
+    padding: 2px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* Style inputs */
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 4 px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[name=delete] {
+    background-color: #b50e1c;
+}
+
+input[name=delete]:hover {
+    background-color: #91020f;
+}
+
+input[name=edit]:hover {
+    background-color: #45a049;
+}
+
+/* Style anchor tags */
+
+.button {
+    background-color: rgb(91, 187, 216);
+    border-radius: 5px;
+    color: white;
+    padding: .1em;
+    text-decoration: none;
+}
+
+.button:focus,
+.button:hover {
+    background-color: rgb(34, 125, 178);
+    color: White;
+}

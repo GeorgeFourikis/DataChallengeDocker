@@ -1,0 +1,75 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include layouts/header.ejs %>
+
+<div>
+    <h3>Pick dates here...</h3>
+    <form method="get" action='/records?startingDate&endingDate'>
+        <input type="date" name="startingDate" required>
+        <input type="date" name="endingDate" required>
+        <input type="submit" >
+    </form>
+</div>
+
+<% if(data.length === 0) {%>
+    <h3>No Data Found, please try again.</h3>
+<%}else{%>
+    <table>
+    <tr>
+        <th>CITY  
+            <a class="button" href="/records/sortCity">Sort Enc</a>                   
+            <a class="button" href="/records/sortCityDec">Sort Dec</a>                   
+        </th>
+        <th>Start Date
+            <a class="button" href="/records/sDateSort">Sort Enc</a> 
+            <a class="button" href="/records/sDateSortDec">Sort Dec</a> 
+        </th>
+        <th>End Date
+            <a class="button" href="/records/eDateSort">Sort Enc</a> 
+            <a class="button" href="/records/eDateSortDec">Sort Dec</a> 
+        </th>
+        <th>PRICE
+            <a class="button" href="/records/priceSort">Sort Enc</a>
+            <a class="button" href="/records/priceSortDec">Sort Dec</a>
+        </th>
+        <th>STATUS
+            <a class="button" href="/records/statusSort">Sort Enc</a>
+            <a class="button" href="/records/statusSortDec">Sort Dec</a>
+        </th>
+        <th>COLOR
+            <a class="button" href="/records/colorSort">Sort Enc</a>
+            <a class="button" href="/records/colorSortDec">Sort Dec</a>
+        </th>
+        <th>ACTIONS</th>
+    </tr>
+    <% if (data) { %>
+    <% data.forEach(function(doc){ %>
+        <tr>
+            <td><%= doc.city %></td>
+            <td><%= new Date(doc.start_date).toLocaleDateString() %></td>
+            <td><%= new Date(doc.end_date).toLocaleDateString() %></td>
+            <td><%= doc.price %></td>
+            <td><%= doc.status %></td>
+            <td><%= doc.color %></td>
+            <td>
+                <div style="float:left">
+                    <form method="post" action="/record/<%= doc._id %>/delete" style="float:right">
+                        <input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+                        <input type="hidden" name="_method" value="DELETE" />
+                    </form>
+                    <form method="get" action='/record/<%= doc._id %>' style="float:right">
+                        <input type="submit" name="edit" value='Edit' />
+                    </form>			
+                </div>
+            </td>
+        </tr>
+    <% }) %>
+    <% } %>
+    </table>
+<% } %>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include layouts/footer.ejs %>

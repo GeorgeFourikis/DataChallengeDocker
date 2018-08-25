@@ -1,0 +1,28 @@
+<%- include layouts/header.ejs %>
+
+<% if(data) { %>
+    <h1>Record with id: <%= data._id %></h1>
+
+    <form method="post" action="/record/<%= data._id %>/edit">
+        <div>
+            <label>City name</label>
+            <input type="text" name="city" placeholder="city" value=<%= data.city %>>
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" name="price" placeholder="price" value=<%= data.price %>>
+        </div>
+        <div>
+            <label>Status</label>
+            <input type="text" name="status" placeholder="status" value=<%= data.status %>>
+        </div>
+        <div>
+            <label>Color</label>
+            <input type="text" name="color" placeholder="color" value=<%= data.color %>>
+        </div>
+        <input type="submit" name="Submit">
+    </form>
+<% } %>
+
+
+<%- include layouts/footer.ejs %>
