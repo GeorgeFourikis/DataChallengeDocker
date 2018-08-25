@@ -1,5 +1,14 @@
-The application from here: https://github.com/GeorgeFourikis/DataChallenge but using Docker
+The application from here: <p>https://github.com/GeorgeFourikis/DataChallenge</p> but using Docker
 ===
+
+Step1
+==
+Clone the application
+```console
+    > git clone https://github.com/GeorgeFourikis/DataChallengeDocker.git
+    > cd DataChallengeDocker
+```
+
 Step1
 ==
 By running this command we build the 2 different parts of our app, `app` and `mongo`  
